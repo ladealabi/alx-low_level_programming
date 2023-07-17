@@ -6,22 +6,31 @@
  */
 int main(void)
 {
-	int n, m;
+	int i = '0';
+	int j = '0';
 
-	for (n = 0; m <= 10; n++)
+	while (i <= '9')
 	{
-		for (j = i + 1; j < 10; j++)
+		while (j <= '9')
 		{
-			putchar(i + '0');
-			putchar(j + '0');
-			
-			if (!(i == 8 && j == 9))
+			if (!(i > j) || i == j)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(i + '0');
+				putchar(j + '0');
+				if (i == '8' && j == '9')
+				{
+					putchar('\n');
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
+			j++;
 		}
+		j = '0';
+		i++;
 	}
-	putchar('\n');
-	return (0);
+return (0);
 }
